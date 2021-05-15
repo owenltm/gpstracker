@@ -39,7 +39,7 @@ function initMap(tourid = "1234") {
           markers.push({
             id: id,
             marker: new google.maps.Marker({
-                      position: location,
+                      position: {lat: location.latitude, lng: location.longitude},
                       //*TODO: FIX Photo size (to 50px maybe ?)
                       icon: user.thumbImage != null ? user.thumbImage : "https://picsum.photos/50",
                       map: map,
@@ -60,7 +60,10 @@ function initMap(tourid = "1234") {
 
       var marker = m.marker;
 
-      marker.setPosition(data[m.id]);
+      marker.setPosition({
+        lat: data[m.id].latitude,
+        lng: data[m.id].longitude,
+      });
     })
   })
 }
