@@ -1,0 +1,50 @@
+.sidebar {
+  height: 100%;
+  width: 20%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #eee;
+  overflow-x: hidden;
+}
+.main {
+  height: 100%;
+  margin-left: 20%;
+}
+#map {
+  height: 100%;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Lato", sans-serif;
+}
+.tour-options{
+  padding: 6px 8px ;
+}
+.form-select {
+  width: 100%;
+  padding: 8px;
+}
+.member-item {
+  background-color: #fff;
+  padding: 8px;
+  margin: 4px 8px 4px 8px;
+  display: flex;
+}
+.member-img {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.member-text {
+  margin-left: 8px;
+}
+.member-text a{
+  text-decoration: none;
+  color: #000;
+}
+.member-name{
+  margin: 0;
+}

@@ -1,20 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <style>
-      #map {
-        height: 100%;
-      }
-      html, body {
-        height: 100%;
-        margin: 0;
-        padding: 0;
-      }
-    </style>
+    <title>GPS Tracker</title>
+    <link rel="stylesheet" href="./src/css/style.css">
   </head>
   <body>
-    <input type="text" name="tourid" value="" />
-    <div id="map"></div>
+    <div class="sidebar">
+      <div class="tour-options">
+        <select id="tours" class="form-select" name="tours" onchange="initMap()">
+          <option value="">Select Tour</option>
+        </select>
+      </div>
+      
+      <div id="members-list" class="members-list">
+        <div class="member-item">
+          <div class="member-img">
+            <img src="https://picsum.photos/50">
+          </div>
+          <div class="member-text">
+            <h4 class="member-name">Some Name</h4>
+            <span>Some supporting text</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main">
+      <div id="map"></div>
+    </div>
+
     <script defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA0LAiEKGSoTrc3liB2srK7G1o6qLcRqk
         &libraries=visualization&callback=initMap">
@@ -47,7 +60,7 @@
 
     </script>
 
-    <script src="./map.js"></script>
+    <script src="./src/js/map.js"></script>
 
   </body>
 </html>
