@@ -5,8 +5,69 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Detail</title>
+  <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
-  <h1>Detail</h1>
+  <div class="navbar">
+    <a href="index.html">BACK</a>
+  </div>
+  
+  <div class="detail-main">
+    <div class="profile">
+      <div class="profile-image">
+        <img src="https://picsum.photos/250" style="width: 100%; height: 100%;" />
+      </div>
+      <div class="profile-details">
+        <h2 class="profile-name">Name</h2>
+        <span>email</span>
+      </div>
+    </div>
+
+    <div class="chart">
+      <canvas id="altChart"></canvas>
+    </div>
+    <div class="chart">
+      <canvas id="speedChart"></canvas>
+    </div>
+
+  </div>
+
+  <!-- <script defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA0LAiEKGSoTrc3liB2srK7G1o6qLcRqk
+        &libraries=visualization&callback=initMap">
+    </script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-app.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-analytics.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-database.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.6.1/firebase-firestore.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyDA0LAiEKGSoTrc3liB2srK7G1o6qLcRqk",
+        authDomain: "gps-tracker-41e33.firebaseapp.com",
+        databaseURL: "https://gps-tracker-41e33-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "gps-tracker-41e33",
+        storageBucket: "gps-tracker-41e33.appspot.com",
+        messagingSenderId: "168004082760",
+        appId: "1:168004082760:web:b7f09d7ad00922b8f38c7d",
+        measurementId: "G-5PBL0DC8S6"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+    </script>
+
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+
+    <script src="./src/js/detail.js"></script>
 </body>
 </html>

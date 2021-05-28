@@ -38,13 +38,46 @@ html, body {
   margin-top: auto;
   margin-bottom: auto;
 }
-.member-text {
+.member-details {
   margin-left: 8px;
 }
-.member-text a{
+.member-details a{
   text-decoration: none;
   color: #000;
 }
 .member-name{
   margin: 0;
+}
+
+/* DETAILS */
+.navbar {
+  background-color: #eee;
+  padding: 16px;
+  overflow: hidden;
+}
+.navbar a{
+  text-decoration: none;
+  color: #000;
+}
+.detail-main {
+  margin: 2em;
+}
+.profile {
+  display: flex;
+  background-color: #fff;
+}
+.profile-image {
+  width: 7.5em;
+  height: 7.5em;
+  background-color: #000;
+}
+.profile-details {
+  margin-left: 2em;
+}
+.profile-name {
+  margin: 0;
+}
+.chart{
+  width: 50%;
+  margin-top: 50px;
 }

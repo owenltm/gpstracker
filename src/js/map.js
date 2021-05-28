@@ -57,10 +57,10 @@ function initMap() {
             <div class="member-img">
               <img src=${user.thumbImage}>
             </div>
-            <div class="member-text">
-              <a href='detail.html'>
+            <div class="member-details">
+              <a href='detail.html?tourid=${tourid}&memberid=${id}'>
                 <h4 class="member-name">${user.name}</h4>
-                <span>Some supporting text</span>
+                <span>${user.email}</span>
               </a>
             </div>
           `;
