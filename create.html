@@ -1,42 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Detail</title>
+  <title>Create new tour</title>
   <link rel="stylesheet" href="./src/css/style.css">
 </head>
 <body>
-  <div class="navbar">
-    <a href="index.html">BACK</a>
+  <div class="sidebar">
+    <div class="input-layout">
+      <input class="input" type="text" id="event-name" placeholder="Tour name" />
+    </div>
+    <div class="input-layout">
+      <input class="input" type="text" id="event-desc" placeholder="Tour desc" />
+    </div>
+    <div class="input-layout">
+      <input class="input" type="date" id="event-date">
+    </div>
+    <div class="input-layout">
+      <input class="input" type="text" id="event-route" placeholder="Tour route" />
+    </div>
+    <div class="points-list" id="points-list">
+      <!-- <div class="item" onclick="setState('start')">
+        <h4>Start Point</h4>
+        <p>Coords</p>
+        <p>Lat: <span></span></p>
+        <p>Lng: <span></span></p>
+      </div> -->
+
+    </div>
+    <div class="input-layout">
+      <button class="btn3" onclick="addPoint()">Add Point</button>
+    </div>
+    <div class="input-layout">
+      <button class="btn2" onclick="saveTour()">CREATE TOUR</button>
+    </div>
   </div>
-  
-  <div class="detail-main">
-    <div class="profile">
-      <div class="profile-image">
-        <img id="profileImage" src="https://picsum.photos/250" style="width: 100%; height: 100%;" />
-      </div>
-      <div class="profile-details">
-        <h2 class="profile-name" id="profileName">Name</h2>
-        <span id="profileEmail">email</span>
-      </div>
-    </div>
-
-    
-    <div class="chart-layout">
-      <p>Catatan kecepatan</p>
-      <canvas id="speedChart" class="chart"></canvas>
-    </div>
-    <div class="chart-layout">
-      <p>Elevasi rute</p>
-      <canvas id="altChart" class="chart"></canvas>
-    </div>
-    <div class="chart-layout">
-      <p>Rute yang dilalui</p>
-      <div id="map"></div>
-    </div>
-
+  <div class="main">
+    <div id="map"></div>
   </div>
 
   <script defer
@@ -73,8 +72,10 @@
 
     </script>
 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
 
-    <script src="./src/js/detail.js"></script>
+    <script src="./src/js/create.js"></script>
 </body>
 </html>

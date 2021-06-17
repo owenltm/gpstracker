@@ -5,6 +5,9 @@ const tourRef = dbRef.child("Tours");
 const userRef = dbRef.child("Users");
 const locationRef = dbRef.child("Locations");
 
+var db = firebase.firestore();
+var toursCollection = db.collection("Tours");
+
 //Tour options
 var selectInput = document.getElementById("tours");
 
@@ -40,13 +43,34 @@ function initMap() {
     streetViewControl: false
   });
 
+  //POLYS
+  if(tourid != null && tourid != ""){
+    console.log(tourid);
+
+    toursCollection.doc(tourid).get().then((doc) => {
+      const data = doc.data(); 
+
+      const tourPath = new google.maps.Polyline({
+        path: data.polys,
+        geodesic: true,
+        strokeColor: "#03a9f4",
+        strokeOpacity: 1.0,
+        strokeWeight: 4,
+      });
+      tourPath.setMap(map);
+      
+    });
+
+  }
+
   //Member Markers
   if(tourid){
-    membersList.innerHTML = "";
-
+    
     tourRef.child(tourid).child('members').on('value', (tourMembersSnapshot) => {
+      membersList.innerHTML = "";
       tourMembersSnapshot.forEach(member => {
         var id = member.val().id;
+        var status = member.val().status;
   
         userRef.child(id).get().then((userSnapshot) => {
           var user = userSnapshot.val();
@@ -59,8 +83,9 @@ function initMap() {
             </div>
             <div class="member-details">
               <a href='detail.html?tourid=${tourid}&memberid=${id}'>
-                <h4 class="member-name">${user.name}</h4>
-                <span>${user.email}</span>
+              <h4 class="member-name">${user.name}</h4>
+              <span>${user.email}</span>
+              <span class="member-status ${status}">${status}</span>
               </a>
             </div>
           `;
